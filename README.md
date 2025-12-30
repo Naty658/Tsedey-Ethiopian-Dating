@@ -6,11 +6,11 @@ A modern Android dating app built with **React Native (Expo)** and **Firebase (A
 - Swipe & match flow
 - Real-time chat
 - Online status (presence)
-- Filters (age, location, preferences)
+- Filters (age, location, and other preferences)
 - Profile privacy (hide profile)
 - Safety tools: block, report
-- Chat controls: delete chats
-- UX controls: reset swipes
+- Chat controls: delete and report chats
+- UX controls: reset swipes, reset filters, change filters
 
 ## Tech Stack
 - React Native (Expo)
