@@ -1,12 +1,40 @@
 workflows:
   ios-workflow:
     name: iOS Workflow
+    instance_type: mac_mini_m2
     max_build_duration: 120
+
     environment:
-      vars:
-        NODE_ENV: production
+      ios_signing:
+        distribution_type: ad_hoc
+        bundle_identifier: com.tsedey
+
     scripts:
-      - npm ci
-      - npx expo export --platform ios
+      - name: Install dependencies
+        script: |
+          npm ci
+
+      - name: Generate iOS native project
+        script: |
+          npx expo prebuild --platform ios --non-interactive
+
+      - name: Install CocoaPods
+        script: |
+          cd ios
+          pod install
+
+      - name: Use provisioning profiles
+        script: |
+          xcode-project use-profiles
+
+      - name: Build IPA
+        script: |
+          WORKSPACE=$(find ios -maxdepth 1 -name "*.xcworkspace" | head -1)
+          SCHEME=$(find ios -maxdepth 1 -name "*.xcodeproj" | head -1 | xargs basename | sed 's/\.xcodeproj$//')
+          xcode-project build-ipa \
+            --workspace "$WORKSPACE" \
+            --scheme "$SCHEME"
+
     artifacts:
-      - dist/**
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
