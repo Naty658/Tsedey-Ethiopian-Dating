@@ -1,0 +1,30 @@
+const express = require('express');
+const cors = require('cors');
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+app.post('/chat', (req, res) => {
+  const { message } = req.body;
+  const msg = message.toLowerCase();
+
+  let reply = null;
+  if (msg.includes("hello")) reply = "Hi.";
+  else if (msg.includes("how are you")) reply = "Good.";
+
+  if (!reply) {
+    const links = [
+      "http://invalid.link/abc",
+      "http://error-site.com/404",
+      "http://notfound.test/broken",
+      "http://oops.invalid/missing",
+    ];
+    const randomLink = links[Math.floor(Math.random() * links.length)];
+    reply = `I don't understand. Please refer to this: ${randomLink}`;
+  }
+
+  res.json({ reply });
+});
+
+app.listen(5000, () => console.log('Backend running on port 5000'));

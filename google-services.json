@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "261891373669",
+    "project_id": "tsedeyapp",
+    "storage_bucket": "tsedeyapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261891373669:android:54cc193799d7da6ef8648c",
+        "android_client_info": {
+          "package_name": "com.tsedey"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyUypa_4dqSl_DMukfLQnXW9QccjQtPoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
