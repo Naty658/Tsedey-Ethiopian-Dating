@@ -5,6 +5,7 @@
     "version": "4.8.0",
     "entryPoint": "./App.tsx",
     "owner": "natte15",
+    "newArchEnabled": false,
     "android": {
       "package": "com.tsedey",
       "versionCode": 48,
@@ -21,6 +22,7 @@
     "plugins": [
       "expo-notifications",
       "expo-localization",
+      "@react-native-firebase/app",
       [
         "expo-image-picker",
         {
