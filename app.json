@@ -19,6 +19,26 @@
       }
     },
     "plugins": [
+
+       [
+  "expo-build-properties",
+  {
+    "ios": {
+      "useFrameworks": "static",
+      "deploymentTarget": "15.1",
+      "forceStaticLinking": [
+        "RNFBApp",
+        "RNFBAuth",
+        "RNFBAnalytics",
+        "RNFBFirestore",
+        "RNFBFunctions",
+        "RNFBRemoteConfig",
+        "RNFBStorage"
+      ]
+    },
+    "android": {}
+  }
+],
       "expo-notifications",
       "expo-localization",
       "@react-native-firebase/app",
@@ -28,16 +48,7 @@
           "photosPermission": "Allow access to your photos"
         }
       ],
- [
-  "expo-build-properties",
-  {
-    "android": {},
-    "ios": {
-      "useFrameworks": "static",
-      "deploymentTarget": "15.1"
-    }
-  }
-],
+
       [
         "react-native-iap",
         {
