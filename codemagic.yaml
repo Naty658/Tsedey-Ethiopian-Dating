@@ -16,7 +16,7 @@ workflows:
 
       - name: Generate iOS native project
         script: |
-          npx expo prebuild --platform ios --non-interactive
+          npx expo prebuild --clean --platform ios --non-interactive
 
       - name: Install CocoaPods
         script: |

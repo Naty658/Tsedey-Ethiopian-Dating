@@ -28,11 +28,14 @@
         }
       ],
       [
-        "expo-build-properties",
-        {
-          "android": {}
-        }
-      ],
+  "expo-build-properties",
+  {
+    "android": {},
+    "ios": {
+      "useFrameworks": "static"
+    }
+  }
+],
       [
         "react-native-iap",
         {
