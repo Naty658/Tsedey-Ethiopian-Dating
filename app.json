@@ -27,12 +27,13 @@
           "photosPermission": "Allow access to your photos"
         }
       ],
-      [
+ [
   "expo-build-properties",
   {
     "android": {},
     "ios": {
-      "useFrameworks": "static"
+      "useFrameworks": "static",
+      "deploymentTarget": "15.1"
     }
   }
 ],
@@ -51,6 +52,7 @@
     },
     "ios": {
       "bundleIdentifier": "com.tsedey",
+      "googleServicesFile": "./GoogleService-Info.plist",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
